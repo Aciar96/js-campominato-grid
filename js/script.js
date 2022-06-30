@@ -41,6 +41,9 @@ function createCell(num){
     const cell = document.createElement('div')
     cell.className =  'cell';
     cell.innerText = num
+    cell.dataset.num = num
+
+
     return cell;
 }
 
@@ -61,12 +64,11 @@ const totalCell = rows * coll
     for(let i=1 ; i <= totalCell; i++){
         const newCell = createCell(i);
          
-        newCell.addEventListener('click' , function(){
+        newCell.addEventListener('click' , function(event){
             this.classList.add('clicked')
+            console.log('hai cliccato il numero:' + event.target.dataset.num )
         })
-        
-        
-        
+
         grid.appendChild(newCell)
         }
     
