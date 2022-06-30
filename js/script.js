@@ -37,10 +37,10 @@ Note:
 
 ///FUNZIONE PER CREARE LE CELLE inserendo il parametro i
 
-function createCell(){
+function createCell(num){
     const cell = document.createElement('div')
     cell.className =  'cell';
-
+    cell.innerText = num
     return cell;
 }
 
@@ -59,7 +59,7 @@ const totalCell = rows * coll
  starter.addEventListener('click',function(){
 //4 - genero una griglia tramite js 
     for(let i=1 ; i <= totalCell; i++){
-        const newCell = createCell();
+        const newCell = createCell(i);
          
         newCell.addEventListener('click' , function(){
             this.classList.add('clicked')
