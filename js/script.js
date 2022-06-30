@@ -24,3 +24,50 @@ Note:
 */
 
 
+//milestone 2
+//Rimuoviamo le celle che abbiamo inserito nell'HTML in modo da generarle tramite JS. Al click del bottone play, vengono generate 100 celle in 10 righe da 10 celle ciascuna.
+
+//-1 recupero il bottone e  la griglia dall'html
+//2 definisco lle righe e le colonne 
+//3- creo un addEventListener sul bottone che al click deve generare la griglia
+//4 - genero una griglia tramite js 
+
+
+
+
+///FUNZIONE PER CREARE LE CELLE inserendo il parametro i
+
+function createCell(){
+    const cell = document.createElement('div')
+    cell.className =  'cell';
+
+    return cell;
+}
+
+
+
+//-1 recupero il bottone e  la griglia dall'html
+const gridElement = document.getElementById('grid')
+const starter = document.getElementById('start')
+
+//2 definisco lle righe e le colonne 
+const rows = 10;
+const coll= 10;
+const totalCell = rows * coll
+
+//3- creo un addEventListener sul bottone che al click deve generare la griglia 
+ starter.addEventListener('click',function(){
+//4 - genero una griglia tramite js 
+    for(let i=1 ; i <= totalCell; i++){
+        const newCell = createCell();
+         
+        newCell.addEventListener('click' , function(){
+            this.classList.add('clicked')
+        })
+        
+        
+        
+        grid.appendChild(newCell)
+        }
+    
+ })
